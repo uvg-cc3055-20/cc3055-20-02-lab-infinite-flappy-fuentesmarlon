@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-    bool gameOver = false;
-    int score = 0;
-    public static GameController instance; 
+    public static GameController instance;
+    public bool gameOver = false;
+    public int score = 0;
+    
 	// Use this for initialization
 	void Start () {
         instance = this;

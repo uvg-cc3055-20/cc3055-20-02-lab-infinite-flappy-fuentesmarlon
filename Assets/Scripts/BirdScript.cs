@@ -17,5 +17,10 @@ public class BirdScript : MonoBehaviour {
             rb.AddForce(Vector2.up * jumpForce);
         }
 	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameController.instance.score++;
+        Debug.Log(GameController.instance.score++);
+    }
 
 }

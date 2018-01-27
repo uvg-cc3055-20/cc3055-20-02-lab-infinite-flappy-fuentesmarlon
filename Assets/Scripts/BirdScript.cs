@@ -12,15 +12,26 @@ public class BirdScript : MonoBehaviour {
 	}
 	
 	void Update () {
+        if (GameController.instance.gameOver == false) { 
         if (Input.GetButtonDown("Jump")) {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
         }
-	}
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameController.instance.score++;
         Debug.Log(GameController.instance.score++);
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enviroment")
+        {
+            GameController.instance.gameOver = true;
+        }
+
+
     }
 
 }

@@ -13,6 +13,7 @@ public class ColumnSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (GameController.instance.gameOver == false) { 
         if (elapsedTime < spawnTime)
         {
             elapsedTime += Time.deltaTime;
@@ -23,5 +24,6 @@ public class ColumnSpawner : MonoBehaviour {
             Instantiate(column, new Vector3(8, random, 0), Quaternion.identity);
             elapsedTime = 0;
         }
-	}
+        }
+    }
 }
